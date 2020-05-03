@@ -98,12 +98,14 @@ Dockerfile is a text file that defines a Docker image. You will use a Dockerfile
 Some standard instructions:
 - FROM: (FROM <image>[:tag = latest]): inherit from existing image (so you don't need to build things from scratch) (FROM scratch/ FROM ubuntu) 
 - WORKDIR: set up work directory 
-- COPY:  
+- COPY: copy file from host machine to container
 - RUN: run commands (usualy used to install dependency) 
 RUN <command> or 
 - ENV: set up enviromental variable  
 - EXPOSE: get your port right 
-- CMD: 
+- CMD: define the default executable of a Docker image. 
+
+- Entrypoint: same with CMD but you can add a command-line argument
 
 - VOLUME: use this when you want to tell Docker that the stuff ouputted by container will be stored on __a host file system__ instead of container file. The same thing to achieve this goal is 
 ```docker run -v <host_path>:<docker_container_path> <image>```.
