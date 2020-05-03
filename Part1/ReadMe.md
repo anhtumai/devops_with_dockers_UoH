@@ -168,7 +168,7 @@ $> docker run -it -d -p 8000:8000 -v "$PWD"/ex111/backend-example-docker:/usr/sr
 
 ### 1.13 
 
-![Dockerfile Java Backend](./ex113/Dockerfile)
+[Dockerfile Java Backend](./ex113/Dockerfile)
 ```
 $> docker build -t java-backend ex113
 $> docker run -it -d -p 8080:8080 java-backend 
@@ -176,7 +176,7 @@ $> docker run -it -d -p 8080:8080 java-backend
 ![](1-13.png)
 
 ### 1.14
-![Dockerfile Java Backend](./ex114/Dockerfile)
+[Dockerfile Java Backend](./ex114/Dockerfile)
 ```
 $> docker build -t rail-backend ex114
 $> docker run -it -d -p 3000:3000 rail-backend 
