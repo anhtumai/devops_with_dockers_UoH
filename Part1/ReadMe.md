@@ -100,7 +100,6 @@ Some standard instructions:
 - WORKDIR: set up work directory 
 - COPY: copy file from host machine to container
 - RUN: run commands (usualy used to install dependency) 
-RUN <command> or 
 - ENV: set up enviromental variable  
 - EXPOSE: get your port right 
 - CMD: define the default executable of a Docker image. 
