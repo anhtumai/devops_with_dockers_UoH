@@ -126,9 +126,11 @@ cat app/logs.txt
 
 ### 1.9
 ```
-docker run -d -p 80 devopsdockeruh/ports_exercise 
+$>docker run -d -p 80 devopsdockeruh/ports_exercise 
+$>curl localhost:32770 
+Port configured correctly, generated message in logs.txt
 ```
-![](1-9.png)
+
 
 ### 1.10
 [Dockerfile](./ex110/Dockerfile)
@@ -167,6 +169,7 @@ $> docker run -it -d -p 8000:8000 -v "$PWD"/ex111/backend-example-docker:/usr/sr
 ```
 ![](1-12.png)
 
+
 ### 1.13 
 
 [Dockerfile Java Backend](./ex113/Dockerfile)
@@ -183,5 +186,6 @@ $> docker build -t rail-backend ex114
 $> docker run -it -d -p 3000:3000 rail-backend 
 ```
 ![](1-14.png)
+
 
 
