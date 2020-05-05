@@ -60,7 +60,8 @@ $> docker-compose up --scale compute=2
 
 ### 2.5
 
-[Project](./ex5/docker-compose.yml)
+[Docker Compose file](./ex5/docker-compose.yml)
+
 [Backend Dockerfile](./ex5/backend/Dockerfile)
 ```
 $> docker-compose up
@@ -69,7 +70,7 @@ $> docker-compose up
 
 ### 2.6
 
-[Project](./ex6/docker-compose.yml)
+[Docker Compose file](./ex6/docker-compose.yml)
 ```
 $> docker-compose up
 ```
