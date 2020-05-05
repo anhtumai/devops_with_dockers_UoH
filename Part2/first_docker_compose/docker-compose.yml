@@ -1,0 +1,10 @@
+version: '3.5' 
+
+services: 
+
+    youtube-dl-ubuntu: 
+      image: 
+      build: . 
+      volumes: 
+        - .:/mydir
+      container_name: youtube-dl

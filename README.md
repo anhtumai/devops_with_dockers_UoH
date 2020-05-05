@@ -6,3 +6,7 @@
 - Part 1: Introduction to Docker, how to build image with real-life examples.
 
 [Link](./Part1/ReadMe.md)
+
+- Part 2: Introduction to Docker Compose, how to link different containers together.
+
+[Link](./Part2/ReadMe.md)
