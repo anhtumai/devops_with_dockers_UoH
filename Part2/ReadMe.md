@@ -80,7 +80,7 @@ Why reverse proxy:
 
 ### 2.1
 
-[Docker Compose file](./ex1/docker-compose.yml)
+[docker-compose.yml](./ex1/docker-compose.yml)
 
 ```shell
 $> cd ex1
@@ -92,7 +92,7 @@ $> docker-compose up
 
 ### 2.2
 
-[Docker Compose file](./ex2/docker-compose.yml)
+[docker-compose.yml](./ex2/docker-compose.yml)
 
 ```shell
 $> cd ex2
@@ -105,7 +105,7 @@ Ports configured correctly!!
 
 ### 2.3
 
-[Docker Compose file](./ex3/docker-compose.yml)
+[docker-compose.yml](./ex3/docker-compose.yml)
 
 ```yaml
 version: "3.5"
@@ -125,7 +125,7 @@ services:
 
 ### 2.4
 
-[Docker Compose file](./scaling-exercise/docker-compose.yml)
+[docker-compose.yml](./scaling-exercise/docker-compose.yml)
 
 ```shell
 $> docker-compose up --scale compute=2
@@ -135,7 +135,7 @@ $> docker-compose up --scale compute=2
 
 ### 2.5
 
-[Docker Compose file](./ex5/docker-compose.yml)
+[docker-compose.yml](./ex5/docker-compose.yml)
 
 ```yaml
 version: "3"
@@ -164,7 +164,7 @@ services:
 
 ### 2.6
 
-[Docker-compose file](./ex6/docker-compose.yml)
+[docker-compose.yml](./ex6/docker-compose.yml)
 
 ```yaml
 database:
@@ -185,7 +185,7 @@ Skipped
 
 ### 2.8
 
-[Docker-compose file](./ex8/docker-compose.yml)
+[docker-compose.yml](./ex8/docker-compose.yml)
 
 ```yaml
 proxy:
@@ -205,7 +205,7 @@ proxy:
 
 ### 2.9
 
-[Docker-compose file](./ex9/docker-compose.yml)
+[docker-compose.yml](./ex9/docker-compose.yml)
 
 ```yaml
 database:
