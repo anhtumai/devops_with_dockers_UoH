@@ -1,32 +1,32 @@
 version: '3.5'
-services:
-    frontend:
-        build: ./frontend
-        image: frontend 
-        ports: 
-            - 5000:5000
 
-    backend:
-        build: ./backend
-        image: backend 
-        ports: 
-            - 8000:8000
-        environment: 
-            - REDIS=redis
-            - DB_USERNAME=postgres 
-            - DB_PASSWORD=password 
-            - DB_NAME=postgres
-            - DB_HOST=database
-        depends_on: 
-            - database
-    redis:
-        image: redis:alpine
-        ports:
-            - 6379:6379
+services:
+  frontend:
+    ports:
+      - 5000:5000
+    build: ../../Part1/ex110
+  backend:
+    ports:
+      - 8000:8000
+    build: ../../Part1/ex111
+    volumes: 
+      - ./logs.txt:/backend-example-docker/logs.txt
+    environment:
+      - REDIS=redis 
+      - REDIS_PORT=6379
+      - DB_USERNAME=anhtumai
+      - DB_PASSWORD=password
+      - DB_HOST=database
+    depends_on:
+      - database
     
-    database:
-        image: postgres
-        restart: always
-        environment: 
-            - POSTGRES_PASSWORD=password
-            
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+  database:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=anhtumai

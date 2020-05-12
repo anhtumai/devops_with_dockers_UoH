@@ -147,7 +147,7 @@ $>docker run -p 5000:5000 b1
 ```
 $> docker build .
 Successfully built 47f30be51eff
-$> dockerun -it -d -p 8000:8000 -v "$PWD"/ex111/backend-example-docker:/usr/src/app/backend-example-docker 47 
+$> dockerun -it -d -p 8000:8000 -v "$PWD"/ex111/backend-example-docker:/backend-example-docker 47 
 $> curl http://localhost:8000/
 Port configured correctly, generated message in logs.txt
 $> cat ex111/backend-example-docker/logs.txt
@@ -164,8 +164,8 @@ $> cat ex111/backend-example-docker/logs.txt
 ```
 $> docker build -t frontend ex110
 $> docker build -t backend ex111
-$> docker run -it -d -p 5000:5000 -v "$PWD"/ex110/frontend-example-docker:/usr/src/app/frontend-example-docker frontend
-$> docker run -it -d -p 8000:8000 -v "$PWD"/ex111/backend-example-docker:/usr/src/app/backend-example-docker backend
+$> docker run -it -d -p 5000:5000 -v "$PWD"/ex110/frontend-example-docker:/frontend-example-docker frontend
+$> docker run -it -d -p 8000:8000 -v "$PWD"/ex111/backend-example-docker:/backend-example-docker backend
 ```
 ![](1-12.png)
 

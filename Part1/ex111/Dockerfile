@@ -1,9 +1,9 @@
-FROM node
+FROM ubuntu:18.04
 
-WORKDIR /usr/src/app  
+WORKDIR /
+COPY backend-example-docker backend-example-docker
+RUN apt update && apt install -y curl && curl -sL https://deb.nodesource.com/setup_10.x | bash && apt install -y nodejs
+RUN node -v && npm -v
 
-COPY backend-example-docker backend-example-docker 
-RUN cd backend-example-docker && npm install 
 ENV FRONT_URL=http://localhost:5000
-
-CMD cd backend-example-docker && npm start 
+CMD cd backend-example-docker && npm install && npm start

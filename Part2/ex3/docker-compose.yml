@@ -1,12 +1,13 @@
-version: '3'
+version: '3.5'
 
 services:
     frontend:
-        image: frontend
         ports:
             - 5000:5000
-    
+        build: ../../Part1/ex110
     backend:
-        image: backend
-        ports: 
+        ports:
             - 8000:8000
+        build: ../../Part1/ex111
+        volumes: 
+            - ./logs.txt:/backend-example-docker/logs.txt
