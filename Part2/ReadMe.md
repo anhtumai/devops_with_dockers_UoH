@@ -167,15 +167,15 @@ A proxy acts as a gateway between you and the Internet.
 > - data security (the request will use proxy IP address, firewall,filter, ... )
 > - cache data improve performance
 
-<img src="https://www.cloudflare.com/img/learning/cdn/glossary/reverse-proxy/forward-proxy-flow.svg" style="background-color:white" >
-
 b, Reverse Proxy
 
 Reverse Proxy is not used by the client, but is used by **server admins**. It intercepts requests from clients, send and receive responses from the origin server.
 
 <img src="https://www.cloudflare.com/img/learning/cdn/glossary/reverse-proxy/reverse-proxy-flow.svg" style="background-color:white" >
 
-Benefits of reverse proxy:
+<!-- ![Reverse Proxy](https://www.cloudflare.com/img/learning/cdn/glossary/reverse-proxy/reverse-proxy-flow.svg) -->
+
+Why reverse proxy:
 
 - Load balancing: Provide solution to handle millions of requests per day.
 - Protection from attack
@@ -230,6 +230,15 @@ $> docker-compose up -d
 
 ### 2.10
 
-Same as 2.8, excepts that you need to add envir
+Same as 2.8, excepts that you need to remove `ENV API_URL ...` in frontend ![Dockerfile](./ex10/frontend/Dockerfile). In ![docker-compose.yml](./ex10/docker-compose.yml), add:
+
+```yaml
+frontend:
+  ports:
+    - 5000:5000
+  build: frontend
+  environment:
+    - API_URL=http://localhost:8080/api
+```
 
 ![2.10](2-10.png)
