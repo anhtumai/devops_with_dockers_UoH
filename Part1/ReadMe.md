@@ -17,13 +17,41 @@ Realife Comparison:
 - Container: the real meal
 - Build image with Dockerfile and run the image to create a container
 
+### Dockerfile Overview
+
+Dockerfile is a text file that defines a Docker image. You will use a Dockerfile to create your own custom Docker image, in other words to define custom environment to be used in a Docker container.
+
+`docker build .` => Build a docker image from Dockerfile
+
+Some standard instructions:
+
+````yaml
+- FROM: (FROM <image>[:tag = latest]): inherit from existing image (so you don't need to build things from scratch) (FROM scratch/ FROM ubuntu)
+- WORKDIR: set up work directory
+- COPY: copy file from host machine to container
+- RUN: run commands (usualy used to install dependency)
+- ENV: set up enviromental variable
+- EXPOSE: get your port right
+- CMD: define the default executable of a Docker image.
+
+- Entrypoint: same with CMD but you can add a command-line argument
+
+- VOLUME: use this when you want to tell Docker that the stuff ouputted by container will be stored on __a host file system__ instead of container file. The same thing to achieve this goal is
+```docker run -v <host_path>:<docker_container_path> <image>```.
+````
+
+Best practices:
+
+- **Single** responsibility
+- Container should be stateless
+
 ## Exercises
 
 ### 1.1 Getting started
 
 ```shell
-$>docker run -d <image>
-$>docker stop <id>
+$> docker run -d <image>
+$> docker stop <id>
 ```
 
 ![1.1.1](1-1-1.png)
@@ -33,8 +61,8 @@ $>docker stop <id>
 ### 1.2 Cleanup
 
 ```shell
-$>docker stop
-$>docker system prune
+$> docker stop
+$> docker system prune
 ```
 
 ![1.2](1-2.png)
@@ -45,7 +73,10 @@ $>docker system prune
 
 ### 1.4
 
-`docker exec -it <container-id> sh`
+```shell
+$> docker exec -it <container-id> sh
+```
+
 ![1.4](1-4.png)
 
 ### 1.5
@@ -95,34 +126,6 @@ $> docker run -it curler
 ```
 
 ![1.7](1-7.png)
-
-### Recap about Dockerfile
-
-Dockerfile is a text file that defines a Docker image. You will use a Dockerfile to create your own custom Docker image, in other words to define custom environment to be used in a Docker container.
-
-`docker build .` => Build a docker image from Dockerfile
-
-Some standard instructions:
-
-````yaml
-- FROM: (FROM <image>[:tag = latest]): inherit from existing image (so you don't need to build things from scratch) (FROM scratch/ FROM ubuntu)
-- WORKDIR: set up work directory
-- COPY: copy file from host machine to container
-- RUN: run commands (usualy used to install dependency)
-- ENV: set up enviromental variable
-- EXPOSE: get your port right
-- CMD: define the default executable of a Docker image.
-
-- Entrypoint: same with CMD but you can add a command-line argument
-
-- VOLUME: use this when you want to tell Docker that the stuff ouputted by container will be stored on __a host file system__ instead of container file. The same thing to achieve this goal is
-```docker run -v <host_path>:<docker_container_path> <image>```.
-````
-
-Best practices:
-
-- **Single** responsibility
-- Container should be stateless
 
 ### 1.8
 

@@ -49,6 +49,33 @@ services:
             ( = docker run -e)
 ```
 
+### Reverse Proxy
+
+a, Proxy
+
+A proxy acts as a gateway between you and the Internet.
+
+> Your computer makes a request to a web server. In this case, a proxy acts as a medium between you and the server, making a request **on your behalf**. There are some benefits:
+>
+> - data security (the request will use proxy IP address, firewall,filter, ... )
+> - cache data improve performance
+
+b, Reverse Proxy
+
+Reverse Proxy is not used by the client, but is used by **server admins**. It intercepts requests from clients, send and receive responses from the origin server.
+
+<img src="https://www.cloudflare.com/img/learning/cdn/glossary/reverse-proxy/reverse-proxy-flow.svg" style="background-color:white" >
+
+<!-- ![Reverse Proxy](https://www.cloudflare.com/img/learning/cdn/glossary/reverse-proxy/reverse-proxy-flow.svg) -->
+
+Why reverse proxy:
+
+- Load balancing: Provide solution to handle millions of requests per day.
+- Protection from attack
+- Global Server Load Balancing
+- Caching: this concept is intertwined with CDN. To load a Youtube video from Helsinki, it is highly likely that your laptop gets data from a reverse proxy/CDN in Europe instead of
+- TLS encryption
+
 ## Exercises
 
 ### 2.1
@@ -155,33 +182,6 @@ database:
 ### 2.7
 
 Skipped
-
-### Reverse Proxy
-
-a, Proxy
-
-A proxy acts as a gateway between you and the Internet.
-
-> Your computer makes a request to a web server. In this case, a proxy acts as a medium between you and the server, making a request **on your behalf**. There are some benefits:
->
-> - data security (the request will use proxy IP address, firewall,filter, ... )
-> - cache data improve performance
-
-b, Reverse Proxy
-
-Reverse Proxy is not used by the client, but is used by **server admins**. It intercepts requests from clients, send and receive responses from the origin server.
-
-<img src="https://www.cloudflare.com/img/learning/cdn/glossary/reverse-proxy/reverse-proxy-flow.svg" style="background-color:white" >
-
-<!-- ![Reverse Proxy](https://www.cloudflare.com/img/learning/cdn/glossary/reverse-proxy/reverse-proxy-flow.svg) -->
-
-Why reverse proxy:
-
-- Load balancing: Provide solution to handle millions of requests per day.
-- Protection from attack
-- Global Server Load Balancing
-- Caching: this concept is intertwined with CDN. To load a Youtube video from Helsinki, it is highly likely that your laptop gets data from a reverse proxy/CDN in Europe instead of
-- TLS encryption
 
 ### 2.8
 
