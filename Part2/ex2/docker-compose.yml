@@ -1,7 +1,7 @@
-version: '3.5'  
+version: '3.5'
 
-services: 
-    backend: 
-      image: devopsdockeruh/ports_exercise 
-      ports: 
+services:
+    backend:
+      image: devopsdockeruh/ports_exercise
+      ports:
         - 8000:80

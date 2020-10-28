@@ -4,10 +4,10 @@ services:
     frontend:
         ports:
             - 5000:5000
-        build: ../../Part1/ex110
+        build: ../../Part1/ex10
     backend:
         ports:
             - 8000:8000
-        build: ../../Part1/ex111
-        volumes: 
+        build: ../../Part1/ex11
+        volumes:
             - ./logs.txt:/backend-example-docker/logs.txt

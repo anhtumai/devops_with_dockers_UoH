@@ -1,81 +1,5 @@
 # Part 2
 
-## Docker compose
-
-Compose is a tool for defining and running multi-container Docker applications
-
-- Multiple isolated environments on a single host
-- Preserve volume data when containers are created
-- Only recreate containers that have changed
-- Variables and moving a composition between environments
-
-In short, Compose enables running **multiple containers** on a **single host** with a **single** command. To use with **multiple host**, Ks8 is the way to go.
-
-Normally, Docker containers run in **isolation** but Docker Compose finds a way to make them **communicate**.
-
-All Docker Compose files are **YAML** files.
-
-Example: A big website need to call to **multiple** applications
-
-**Note**: LC_ALL: force all application use default language for output (English)
-
-Basic commands:
-
-- docker-compose up: create and start containers
-- docker-compose down: stop and remove containers,
-  networks, images, volumes.
-
-- docker-compose build: build/rebuild services.
-  (Service is a group of at least 1 containers)
-
-To understand docker-compose file, it is essential to understand the command line arguments
-of docker run first.
-
-```yaml
-services:
-    <image name>:
-        image: <image name>
-        build: <build folder (containg the image)>
-            ( = docker build <build folder>)
-        ports:
-            - host_port:container_port
-            ( = docker run -p)
-        volumes:
-            - host_path:container_path
-            (host_path can be relative path)
-            ( = docker run -v)
-        environments:
-            - <container_ENV_var>=<value>
-            ( = docker run -e)
-```
-
-### Reverse Proxy
-
-a, Proxy
-
-A proxy acts as a gateway between you and the Internet.
-
-> Your computer makes a request to a web server. In this case, a proxy acts as a medium between you and the server, making a request **on your behalf**. There are some benefits:
->
-> - data security (the request will use proxy IP address, firewall,filter, ... )
-> - cache data improve performance
-
-b, Reverse Proxy
-
-Reverse Proxy is not used by the client, but is used by **server admins**. It intercepts requests from clients, send and receive responses from the origin server.
-
-<img src="https://www.cloudflare.com/img/learning/cdn/glossary/reverse-proxy/reverse-proxy-flow.svg" style="background-color:white" >
-
-<!-- ![Reverse Proxy](https://www.cloudflare.com/img/learning/cdn/glossary/reverse-proxy/reverse-proxy-flow.svg) -->
-
-Why reverse proxy:
-
-- Load balancing: Provide solution to handle millions of requests per day.
-- Protection from attack
-- Global Server Load Balancing
-- Caching: this concept is intertwined with CDN. To load a Youtube video from Helsinki, it is highly likely that your laptop gets data from a reverse proxy/CDN in Europe instead of
-- TLS encryption
-
 ## Exercises
 
 ### 2.1
@@ -195,7 +119,7 @@ proxy:
   restart: always
   image: nginx:alpine
   ports:
-    - 8080:80
+    - 80:80
 
   volumes:
     - ./nginx.conf:/etc/nginx/nginx.conf:ro
@@ -238,7 +162,7 @@ frontend:
     - 5000:5000
   build: frontend
   environment:
-    - API_URL=http://localhost:8080/api
+    - API_URL=http://localhost:80/api
 ```
 
 ![2.10](2-10.png)

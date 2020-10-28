@@ -1,20 +1,20 @@
 version: '3'
 services:
     frontend:
-        build: ../../Part1/ex110
-        image: frontend 
-        ports: 
+        build: ../../Part1/ex10
+        image: frontend
+        ports:
             - 5000:5000
 
     backend:
-        build: ../../Part1/ex111
-        image: backend 
-        ports: 
+        build: ../../Part1/ex11
+        image: backend
+        ports:
             - 8000:8000
-        environment: 
+        environment:
             - REDIS=redis
             - REDIS_PORT=6379
-        volumes: 
+        volumes:
             - ./logs.txt:/backend-example-docker/logs.txt
     redis:
         image: redis:alpine

@@ -4,22 +4,22 @@ services:
   frontend:
     ports:
       - 5000:5000
-    build: ../../Part1/ex110
+    build: ../../Part1/ex10
   backend:
     ports:
       - 8000:8000
-    build: ../../Part1/ex111
-    volumes: 
+    build: ../../Part1/ex11
+    volumes:
       - ./logs.txt:/backend-example-docker/logs.txt
     environment:
-      - REDIS=redis 
+      - REDIS=redis
       - REDIS_PORT=6379
       - DB_USERNAME=anhtumai
       - DB_PASSWORD=password
       - DB_HOST=database
     depends_on:
       - database
-    
+
   redis:
     image: redis
     ports:
