@@ -1,0 +1,12 @@
+[submodule "Part1/ex10/frontend-example-docker"]
+	path = Part1/ex10/frontend-example-docker
+	url = https://github.com/docker-hy/frontend-example-docker.git
+[submodule "Part1/ex13/spring-example-project"]
+	path = Part1/ex13/spring-example-project
+	url = https://github.com/docker-hy/spring-example-project.git
+[submodule "Part1/ex14/rails-example-project"]
+	path = Part1/ex14/rails-example-project
+	url = https://github.com/docker-hy/rails-example-project.git
+[submodule "Part1/ex11/backend-example-docker"]
+	path = Part1/ex11/backend-example-docker
+	url = https://github.com/docker-hy/backend-example-docker.git

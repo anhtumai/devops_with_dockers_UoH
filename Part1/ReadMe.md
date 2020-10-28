@@ -1,50 +1,5 @@
 # Part 1
 
-## Domain knowledge
-
-Docker Image: a file built according to an instruction called Dockerimage. It is a **template** defining application and its dependencies.
-
-(`docker build` => create a docker image)
-
-Docker Container: A running instance of an image. It can be a runtime environments, to host one main process. We can start/stop/interact with container.
-
-(`docker run <image>` => create a docker container)
-
-Realife Comparison:
-
-- Dockerfile: shopping list
-- Image: ingredients
-- Container: the real meal
-- Build image with Dockerfile and run the image to create a container
-
-### Dockerfile Overview
-
-Dockerfile is a text file that defines a Docker image. You will use a Dockerfile to create your own custom Docker image, in other words to define custom environment to be used in a Docker container.
-
-`docker build .` => Build a docker image from Dockerfile
-
-Some standard instructions:
-
-````yaml
-- FROM: (FROM <image>[:tag = latest]): inherit from existing image (so you don't need to build things from scratch) (FROM scratch/ FROM ubuntu)
-- WORKDIR: set up work directory
-- COPY: copy file from host machine to container
-- RUN: run commands (usualy used to install dependency)
-- ENV: set up enviromental variable
-- EXPOSE: get your port right
-- CMD: define the default executable of a Docker image.
-
-- Entrypoint: same with CMD but you can add a command-line argument
-
-- VOLUME: use this when you want to tell Docker that the stuff ouputted by container will be stored on __a host file system__ instead of container file. The same thing to achieve this goal is
-```docker run -v <host_path>:<docker_container_path> <image>```.
-````
-
-Best practices:
-
-- **Single** responsibility
-- Container should be stateless
-
 ## Exercises
 
 ### 1.1 Getting started
@@ -105,10 +60,10 @@ $> curl http://helsinki.fi
 
 ### 1.6
 
-[Dockerfile](./ex16/Dockerfile)
+[Dockerfile](./ex6/Dockerfile)
 
 ```shell
-$> cd ex16
+$> cd ex6
 $> docker build -t docker-clock
 $> docker run docker-clock
 ```
@@ -120,7 +75,7 @@ $> docker run docker-clock
 [Dockerfile](./ex17/Dockerfile)
 
 ```shell
-$> cd ex17
+$> cd ex7
 $> docker build -t curler .
 $> docker run -it curler
 ```
@@ -148,7 +103,7 @@ Port configured correctly, generated message in logs.txt
 
 ### 1.10
 
-[Dockerfile](./ex110/Dockerfile)
+[Dockerfile](./ex10/Dockerfile)
 
 ```shell
 $>docker build .
@@ -158,41 +113,45 @@ $>docker run -p 5000:5000 b1
 
 ### 1.11
 
-[Dockerfile](./ex111/Dockerfile)
+[Dockerfile](./ex11/Dockerfile)
 
 ```shell
 $> docker build .
-Successfully built 47f30be51eff
-$> dockerun -it -d -p 8000:8000 -v "$PWD"/ex111/backend-example-docker:/backend-example-docker 47
+Successfully built d75686c67987
+$> touch logs.txt
+$> docker run -it -p 8000:8000 -v $PWD/logs.txt:/backend-example-docker/logs.txt d7
 $> curl http://localhost:8000/
 Port configured correctly, generated message in logs.txt
-$> cat ex111/backend-example-docker/logs.txt
-5/2/2020, 9:56:33 PM: Connection received in root
+$> cat ex11/backend-example-docker/logs.txt
+10/27/2020, 10:29:36 PM: Connection received in root
+10/27/2020, 10:31:04 PM: Connection received in root
+10/27/2020, 10:31:05 PM: Connection received in root
 ```
 
 ![1.11](1-11.png)
 
 ### 1.12
 
-[Dockerfile for frontend](./ex110/Dockerfile)
+[Dockerfile for frontend](./ex10/Dockerfile)
 
-[Dockerfile for backend](./ex111/Dockerfile)
+[Dockerfile for backend](./ex11/Dockerfile)
 
 ```shell
-$> docker build -t frontend ex110
-$> docker build -t backend ex111
-$> docker run -it -d -p 5000:5000 -v "$PWD"/ex110/frontend-example-docker:/frontend-example-docker frontend
-$> docker run -it -d -p 8000:8000 -v "$PWD"/ex111/backend-example-docker:/backend-example-docker backend
+$> docker build -t frontend ../ex10
+$> docker build -t backend ../ex11
+$> touch logs.txt
+$> docker run -it -d -p 5000:5000 frontend
+$> docker run -it -d -p 8000:8000 -v $PWD/logs.txt:/backend-example-docker/logs.txt backend
 ```
 
 ![1.12](1-12.png)
 
 ### 1.13
 
-[Dockerfile Java Backend](./ex113/Dockerfile)
+[Dockerfile Java Backend](./ex13/Dockerfile)
 
 ```shell
-$> docker build -t java-backend ex113
+$> docker build -t java-backend .
 $> docker run -it -d -p 8080:8080 java-backend
 ```
 
@@ -200,11 +159,28 @@ $> docker run -it -d -p 8080:8080 java-backend
 
 ### 1.14
 
-[Dockerfile Java Backend](./ex114/Dockerfile)
+[Dockerfile Java Backend](./ex14/Dockerfile)
 
 ```shell
-$> docker build -t rail-backend ex114
+$> docker build -t rail-backend .
 $> docker run -it -d -p 3000:3000 rail-backend
 ```
 
 ![1.14](1-14.png)
+
+### 1.15
+
+### 1.17
+
+I created an image for Python 3, built from Alpine Linux image.
+The source code is [Dockerfile Python3](./ex17/Dockerfile).
+
+The image is hosted at [Docker Hub](https://hub.docker.com/repository/docker/emaitux/python3_alpine).
+
+Run the image:
+
+```shell
+// Working direction: ./ex17
+$> docker pull emaitux/python3_alpine
+$> docker run -it -v $PWD/project:/project emaitux/python3_alpine
+```
