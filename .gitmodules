@@ -10,3 +10,18 @@
 [submodule "Part1/ex11/backend-example-docker"]
 	path = Part1/ex11/backend-example-docker
 	url = https://github.com/docker-hy/backend-example-docker.git
+[submodule "Part3/ex2/docker-hy.github.io"]
+	path = Part3/ex2/docker-hy.github.io
+	url = https://github.com/docker-hy/docker-hy.github.io.git
+[submodule "Part3/ex1/ex1a/frontend-example-docker"]
+	path = Part3/ex1/ex1a/frontend-example-docker
+	url = https://github.com/docker-hy/frontend-example-docker.git
+[submodule "Part3/ex1/ex1b/backend-example-docker"]
+	path = Part3/ex1/ex1b/backend-example-docker
+	url = https://github.com/docker-hy/backend-example-docker.git
+[submodule "Part3/ex4/frontend/frontend-example-docker"]
+	path = Part3/ex4/frontend/frontend-example-docker
+	url = https://github.com/docker-hy/frontend-example-docker.git
+[submodule "Part3/ex4/backend/backend-example-docker"]
+	path = Part3/ex4/backend/backend-example-docker
+	url = https://github.com/docker-hy/backend-example-docker.git
