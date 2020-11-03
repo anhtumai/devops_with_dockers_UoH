@@ -41,3 +41,30 @@ Image sizes before and after the change:
 ![3.5](3-5.png)
 
 ### 3.6
+
+Frontend Dockerfile: [Dockerfile](./ex6/frontend/Dockerfile)
+
+```shell
+#Working directory: ./ex6
+$> docker build . -t ex6-frontend
+$> docker run ex-frontend
+```
+
+Image sizes before and after the change:
+
+![3.6](3-6.png)
+
+### 3.7
+
+Frontend Dockerfile: [Dockerfile](./ex7/frontend/Dockerfile)
+
+Backend Dockerfile: [Dockerfile](./ex7/backend/Dockerfile)
+
+```shell
+#Working directory: ./ex7
+$> docker-compose up
+```
+
+### 3.8
+
+skipped

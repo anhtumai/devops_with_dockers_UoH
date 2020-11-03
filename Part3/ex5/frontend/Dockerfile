@@ -6,6 +6,8 @@ COPY frontend-example-docker /home/node/app
 
 RUN chown -R node /home/node/app
 
+RUN ls -l .
+
 USER node
 
 RUN npm install

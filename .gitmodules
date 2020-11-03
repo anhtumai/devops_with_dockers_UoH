@@ -37,3 +37,9 @@
 [submodule "frontend-example-docker"]
 	path = frontend-example-docker
 	url = https://github.com/docker-hy/frontend-example-docker.git
+[submodule "Part3/ex7/frontend/frontend-example-docker"]
+	path = Part3/ex7/frontend/frontend-example-docker
+	url = https://github.com/docker-hy/frontend-example-docker.git
+[submodule "Part3/ex7/backend/backend-example-docker"]
+	path = Part3/ex7/backend/backend-example-docker
+	url = https://github.com/docker-hy/backend-example-docker.git

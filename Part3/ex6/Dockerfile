@@ -1,16 +1,15 @@
-FROM node:alpine as installer
-COPY frontend-example-docker/package.json .
-RUN npm install
-########
-FROM node:alpine as builder
-COPY --from=installer /node_modules ./node_modules
-COPY / .
-RUN npm run build
-########
-FROM node:alpine as app
-ENV NODE_ENV=production
-WORKDIR /home/node/app
-COPY --from=builder /dist ./dist
-EXPOSE 5000
+FROM node:15.0.1-alpine3.10 AS installer
+
+WORKDIR /frontend-example-docker
+
+COPY frontend-example-docker /frontend-example-docker
+
+RUN npm install && npm run build
+
+FROM node:15.0.1-alpine3.10
+
+COPY --from=installer /frontend-example-docker/dist /dist
+
 RUN npm install -g serve
-CMD [ "serve", "-s", "dist" ]
+
+CMD serve -s -l 5000 dist
