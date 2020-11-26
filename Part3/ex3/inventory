@@ -1,0 +1,4 @@
+git_url=<your_git_repository_URL>
+image_name=<name_you_give_to_your_image>
+username=<your_dockerhub_username>
+password=<your_dockerhub_password>

@@ -10,7 +10,28 @@ Backend Dockerfile: [Dockerfile](./ex1/ex1b/Dockerfile) (196MB)
 
 ### 3.2
 
+Github Repository: [https://github.com/anhtumai/devops-docker-ex32](https://github.com/anhtumai/devops-docker-ex32)
+
+Heroku App URL: [https://devopswithdockertask32.herokuapp.com/](https://devopswithdockertask32.herokuapp.com/)
+
+Circle CI pipeline:
+
+![CircleCI pipeline](3-2.png)
+
 ### 3.3
+
+Bash script to clone, build and push Docker image to Docker Hub: [main.sh](./ex3/main.sh)
+
+Docker file: [Dockerfile](./ex3/Dockerfile)
+
+Inventory file format: [inventory][./ex3/inventory]
+
+Usage:
+
+```shell
+$> sudo docker build . -t clone_push
+$> sudo docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v $PWD/inventory:/usr/src/inventory clone_push
+```
 
 ### 3.4
 
