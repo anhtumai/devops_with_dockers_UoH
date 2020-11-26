@@ -24,7 +24,7 @@ Bash script to clone, build and push Docker image to Docker Hub: [main.sh](./ex3
 
 Docker file: [Dockerfile](./ex3/Dockerfile)
 
-Inventory file format: [inventory][./ex3/inventory]
+Inventory file format: [inventory](./ex3/inventory)
 
 Usage:
 
