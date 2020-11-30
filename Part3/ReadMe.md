@@ -63,12 +63,12 @@ Image sizes before and after the change:
 
 ### 3.6
 
-Frontend Dockerfile: [Dockerfile](./ex6/frontend/Dockerfile)
+Frontend Dockerfile: [Dockerfile](./ex6/Dockerfile)
 
 ```shell
 #Working directory: ./ex6
 $> docker build . -t ex6-frontend
-$> docker run ex-frontend
+$> docker run ex6-frontend
 ```
 
 Image sizes before and after the change:
