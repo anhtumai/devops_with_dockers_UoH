@@ -43,3 +43,9 @@
 [submodule "Part3/ex7/backend/backend-example-docker"]
 	path = Part3/ex7/backend/backend-example-docker
 	url = https://github.com/docker-hy/backend-example-docker.git
+[submodule "Part2/--force"]
+	path = Part2/--force
+	url = https://github.com/docker-hy/scaling-exercise
+[submodule "Part2/scaling-exercise"]
+	path = Part2/scaling-exercise
+	url = https://github.com/docker-hy/scaling-exercise

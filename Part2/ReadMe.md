@@ -49,9 +49,10 @@ services:
 
 ### 2.4
 
-[docker-compose.yml](./scaling-exercise/docker-compose.yml)
+[docker-compose.yml](https://github.com/docker-hy/scaling-exercise/blob/master/docker-compose.yml)
 
 ```shell
+# Work directory: scaling-exercise
 $> docker-compose up --scale compute=2
 ```
 
