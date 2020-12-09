@@ -154,7 +154,7 @@ $> docker-compose up -d
 
 ### 2.10
 
-First, copy the docker-compose.yml in ex8. You need to remove `ENV API_URL ...` in frontend [Dockerfile](./ex10/frontend/Dockerfile). In [docker-compose.yml](./ex10/docker-compose.yml), add:
+First, copy the docker-compose.yml in ex8. You need to remove `ENV API_URL ...` in frontend [Dockerfile](../Part1/ex10/Dockerfile). In [docker-compose.yml](./ex10/docker-compose.yml), add:
 
 ```yaml
 frontend:
